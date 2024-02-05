@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #0d1117;
+    overflow: hidden;
+  }
+  
+  .calculator {
+    border: 2px solid #333;
+    border-radius: 5px;
+    max-width: 300px;
+    margin: auto;
+    background-color: #161b22;
+    position: relative;
+    animation: pulse 2s infinite;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2),
+                -5px -5px 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  #display {
+    width: calc(100% - 35px);
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #272c34;
+    border-color: #272c34;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+                -2px -2px 5px rgba(255, 255, 255, 0.5);
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  button {
+    border: 1px solid #666;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: #161b22;
+    color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2),
+                -1px -1px 1px rgba(255, 255, 255, 0.5);
+  }
+  
+  button:hover {
+    transform: scale(1.2);
+    background-color: rgb(11, 49, 61);
+  }
+  
+  .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    height: 200px;
+    width: 200px;
+    background-color: transparent;
+    border: solid white;
+    border-radius: 50%;
+    z-index: -1;
+    filter: brightness(200%) saturate(200%);
+    animation: circles 2s linear infinite;
+  }
+  
+  @keyframes circles {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(10);
+    }
+  }
